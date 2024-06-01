@@ -10,8 +10,7 @@ const fibonacci = function (num) {
 
     // cache exist fibonacci request here
     const cacheFib = cache.get(cacheKey);
-    console.log(cacheFib);
-
+   
     if (cacheFib) {
       console.log("fetched from cached data");
       return cacheFib;
@@ -24,7 +23,7 @@ const fibonacci = function (num) {
     const cacheValue = fibNumbs[num - 1];
 
     // save the recent fibonacci to cache.
-    cache.set(cacheKey, cacheValue);
+    cache.set(cacheKey, cacheValue, 30);
 
     console.log("newly genrated fibonacci", cacheValue);
     return fibNumbs[num - 1];
@@ -33,3 +32,5 @@ const fibonacci = function (num) {
   }
 };
 console.log(fibonacci(6));
+
+module.exports = fibonacci;
