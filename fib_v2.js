@@ -12,7 +12,7 @@ const fibonacciGenerator_v2 = (start_index = 0, end_index = Infinity) => {
     [Symbol.iterator]: function () {
       return {
         next: function () {
-          if (currentIndex <= end) {
+          if (currentIndex <= end_index) {
             const value = fibonacci(currentIndex);
             currentIndex++;
             return { value, done: false };
@@ -25,12 +25,11 @@ const fibonacciGenerator_v2 = (start_index = 0, end_index = Infinity) => {
   };
 };
 
-const start = 4;
-const end = 6; // Define your desired range
+const start = 4; // start_index
+const end = 6;  // end_index
 const fibSequence = fibonacciGenerator_v2(start, end);
 
 for (const number of fibSequence) {
   console.log(number);
 }
-// console.log(fibonacciGenerator_v2(4, 8));
 module.exports = fibonacciGenerator_v2;
