@@ -1,4 +1,4 @@
-const fibonacci = require("./fib.js");
+const fibonacci = require("./fibFunc.js");
 /**
  * @start_index - starting number of range
  * @end_index - ending number in the range
@@ -6,7 +6,7 @@ const fibonacci = require("./fib.js");
  *  @fibonacciGenerator_v2 - functon that take 2 argument to iterate between
  */
 
-const fibonacciGenerator_v2 = (start_index = 0, end_index = Infinity) => {
+const fibonacciGenerator = (start_index = 0, end_index = Infinity) => {
   let currentIndex = start_index;
   return {
     [Symbol.iterator]: function () {
@@ -27,9 +27,8 @@ const fibonacciGenerator_v2 = (start_index = 0, end_index = Infinity) => {
 
 const start = 4; // start_index
 const end = 6;  // end_index
-const fibSequence = fibonacciGenerator_v2(start, end);
+const fibSequence = fibonacciGenerator(start, end);
 
 for (const number of fibSequence) {
   console.log(number);
 }
-module.exports = fibonacciGenerator_v2;
