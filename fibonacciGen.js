@@ -3,7 +3,7 @@ const fibonacci = require("./fibFunc.js");
  * @start_index - starting number of range
  * @end_index - ending number in the range
  * @fibonacci - function that takes n arguement to perform fibonacci sequence
- *  @fibonacciGenerator_v2 - functon that take 2 argument to iterate between
+ *  @fibonacciGenerator - functon that take 2 argument to iterate between
  */
 
 const fibonacciGenerator = (start_index = 0, end_index = Infinity) => {
